@@ -1,17 +1,17 @@
-{% extends 'header.html' %}
+<!--{% extends 'header.html' %}
 <!-- ^^ This means add this file to the end of the contents of header.html -->
 <!-- This is where the title, top buttons, and stylesheet is located -->
 
 <!-- Change title here -->
-{% block title %}Chat{% endblock %}
+<!-- {% block title %}Chat{% endblock %}
 
 <!-- Extra style declarations here -->
-{% block style %}
+<!-- {% block style %}-->
 <style>
   :root {
     --background-color: #303234;
     --bg-dark-color: #202123;
-    --bg-highlight-color: #444;
+    --bg-highlight-color: #404345;
     --bg-green-color: #242;
     --bg-purple-color: #423;
     --bg-yellow-color: #430;
@@ -203,6 +203,7 @@
 
   #sendButton:active, button:active {
     background-color: white;
+    border-color: white;
   }
 
   a {
@@ -232,15 +233,19 @@
   #quickmenu {
     display: none;
   }
+
+  #content {
+    background-color: transparent;
+  }
 </style>
-{% endblock %}
+<!-- {% endblock %}
 
 <!-- Extra javascript here -->
-{% block script %}
-{% endblock %}
+<!-- {% block script %}
+{% endblock %}-->
 
 <!-- Main content here -->
-{% block main %}
+<!-- {% block main %}-->
 <div id="container-full-width">
     <div id="outputBox"></div>
     <div id="userlist">
@@ -361,10 +366,6 @@
                 // args = text.split(" ");
                 // args.shift();
                 ws.send(JSON.stringify(packMSG('help', receiver, username, text)));
-                output({
-                    from: 'server',
-                    content: 'Ticket sent'
-                });
             } else {
                 ws.send(JSON.stringify(packMSG('message', receiver, username, text)));
             }
@@ -406,4 +407,4 @@
       boxes.inputBox.focus();
     }
 </script>
-{% endblock %}
+<!-- {% endblock %} -->
