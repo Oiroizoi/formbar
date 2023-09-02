@@ -287,7 +287,7 @@ function sendSound() {
     request.send();
     document.getElementById("sound").value = null;
   } else {
-    formbarAlert("File does not exist");
+    alert("File does not exist");
   }
 }
 
@@ -328,10 +328,10 @@ async function sendMusic() {
   if (volume == 1) volume = "1.0";
   if (bgm.includes(musicFile)) {
     let res = await getResponse("/bgm?file=" + musicFile + "&volume=" + volume);
-    if (res.error) formbarAlert(res.error);
+    if (res.error) alert(res.error);
     else document.getElementById("music").value = null;
   } else {
-    formbarAlert("File does not exist");
+    alert("File does not exist");
   }
 }
 
