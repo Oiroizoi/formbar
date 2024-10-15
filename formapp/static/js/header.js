@@ -117,8 +117,6 @@ function formbarAlert(message, type = "alert", callback, inputType = "text", pro
   }
 }
 
-const urlParams = new URLSearchParams(window.location.search);
-
 //Chat notifications
 chatSocket.on("message", message => {
   message = JSON.parse(message);
